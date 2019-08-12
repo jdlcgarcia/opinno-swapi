@@ -1,0 +1,24 @@
+{
+  "name": "jdlcgarcia/opinno-swapi",
+  "description": "Opinno technical test about Star Wars API",
+  "keywords": [
+    "opinno",
+    "test",
+    "swapi"
+  ],
+  "authors": [
+    {
+      "name": "Juan de la Cruz García García",
+      "email": "jcruzgar@gmail.com"
+    }
+  ],
+  "require": {
+    "monolog/monolog": "*",
+    "vlucas/phpdotenv": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "OpinnoSwapi\\": "src/"
+    }
+  }
+}
