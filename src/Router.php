@@ -6,30 +6,27 @@ abstract class Router
 {
     const BASE_CONTROLLER = '\OpinnoSwapi\controller\\';
     const ALLOWED_ROUTES = [
-        [
-            "controller" => "index",
-            "action" => "index"
-        ]
+        "", "/"
     ];
+    const SUFFIX_CONTROLLER = 'Controller';
+    const SUFFIX_ACTION = "Action";
 
     public static function route()
     {
-        $parsedParameters = self::parseParameters();
-
-        if (self::allowedControllerAction($parsedParameters["controller"], $parsedParameters["action"])) {
-            self::loadControllerAction($parsedParameters);
+        $parsedRequestQuery = self::parseParameters();
+        if (self::allowedRoute($parsedRequestQuery[0])) {
+            self::loadControllerAction($parsedRequestQuery);
         }
 
     }
 
     /**
-     * @param $controller
-     * @param $action
+     * @param $route
      * @return bool
      */
-    private static function allowedControllerAction($controller, $action): bool
+    private static function allowedRoute($route): bool
     {
-        return in_array(["controller" => $controller, "action" => $action], self::ALLOWED_ROUTES);
+        return in_array($route, self::ALLOWED_ROUTES);
     }
 
     /**
@@ -37,25 +34,33 @@ abstract class Router
      */
     private static function parseParameters()
     {
-        $parsedParameters = [];
-        $queryParameters = explode("&", $_SERVER['QUERY_STRING']);
-        foreach ($queryParameters as $queryParameter) {
-            $parsedParameter = explode("=", $queryParameter);
-            $parsedParameters[$parsedParameter[0]] = $parsedParameter[1];
+        if (sizeof($_GET) == 0) {
+            $_GET['url'] = "";
         }
-        return $parsedParameters;
+        return explode("/", $_GET['url']);
     }
 
     /**
-     * @param array $parsedParameters
+     * @param array $parsedRequestQuery
      */
-    private static function loadControllerAction(array $parsedParameters): void
+    private static function loadControllerAction($parsedRequestQuery): void
     {
-        $controllerName = self::BASE_CONTROLLER . ucfirst($parsedParameters['controller']) . 'Controller';
-        $controller = new $controllerName();
-        $actionName = $parsedParameters['action'] . "Action";
-        unset($parsedParameters['action']);
-        unset($parsedParameters['controller']);
-        $controller->$actionName($parsedParameters);
+        $request = $parsedRequestQuery[0];
+        unset($parsedRequestQuery[0]);
+        switch ($request) {
+            case '/' : case '' :
+                $controller = "index";
+                $action = "index";
+                break;
+
+            default:
+                $controller = "error";
+                $action = "index";
+        }
+
+        $controllerName = self::BASE_CONTROLLER . ucfirst($controller) . self::SUFFIX_CONTROLLER;
+        $objController = new $controllerName();
+        $actionName = $action . self::SUFFIX_ACTION;
+        $objController->$actionName($parsedRequestQuery);
     }
 }
