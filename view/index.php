@@ -13,6 +13,7 @@ if (!isset($title)) {
 <head>
     <meta charset="UTF-8" />
     <title><?php echo $title ?></title>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <?php include_once("partial/".$view.".php"); ?>
