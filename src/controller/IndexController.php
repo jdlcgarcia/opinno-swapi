@@ -2,17 +2,21 @@
 
 namespace OpinnoSwapi\controller;
 
-use OpinnoSwapi\service\ApiHelper;
-use OpinnoSwapi\service\Swapi;
+use Exception;
+use OpinnoSwapi\service\FilmService;
 
 class IndexController
 {
+    /**
+     * @throws Exception
+     */
     public function indexAction()
     {
-        $swapi = new Swapi();
-        $json = $swapi->getPerson(1);
-
-        $view = "index";
-        require_once("view/".$view.".php");
+//        $swapi = new Swapi();
+//        $json = $swapi->getPerson(1);
+        $service = new FilmService();
+        $filmList = $service->getFilmList("of");
+        $view = "films";
+        require_once("view/template.php");
     }
 }
