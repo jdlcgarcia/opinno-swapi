@@ -25,14 +25,18 @@ class IndexController
     {
         $filmId = "";
 
-        if (isset($queryParameters[1]) && $queryParameters[1] != "") {
-            $filmId = $queryParameters[1];
-        } else {
-            header('Location: error.php');
+        if (sizeof($queryParameters) == 0) {
+            header('Location: error');
             exit();
         }
+        if ($queryParameters[1] == "" || preg_match('/[^0-9]+/',$queryParameters[1]))  {
+            header('Location: ../error');
+            exit();
+        }
+
+
         $service = new FilmService();
-        $film = $service->getFilm($filmId);
+        $film = $service->getFilm($queryParameters[1]);
         $view = "detail";
         require_once("view/template.php");
     }
