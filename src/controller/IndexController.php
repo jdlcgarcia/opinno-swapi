@@ -21,10 +21,18 @@ class IndexController
     /**
      * @throws Exception
      */
-    public function filmAction()
+    public function filmAction($queryParameters)
     {
+        $filmId = "";
+
+        if (isset($queryParameters[1]) && $queryParameters[1] != "") {
+            $filmId = $queryParameters[1];
+        } else {
+            header('Location: error.php');
+            exit();
+        }
         $service = new FilmService();
-        $film = $service->getFilm("1");
+        $film = $service->getFilm($filmId);
         $view = "detail";
         require_once("view/template.php");
     }

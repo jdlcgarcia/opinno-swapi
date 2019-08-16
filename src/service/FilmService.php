@@ -35,6 +35,9 @@ class FilmService
      */
     public function getFilm($filmId)
     {
+        if ($filmId < 0 || $filmId >= 8) {
+            header('Location: ../error.php');
+        }
         $film = new Film(self::URL.$filmId);
         return FilmParser::parse($film);
     }
