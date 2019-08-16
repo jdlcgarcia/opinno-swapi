@@ -49,6 +49,16 @@ class Film
     private $vehicleList;
 
     /**
+     * Film constructor.
+     * @param string $url
+     */
+    public function __construct(string $url)
+    {
+        $this->url = $url;
+    }
+
+
+    /**
      * @return Character[]
      */
     public function getCharacterList(): array
