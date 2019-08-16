@@ -6,7 +6,7 @@ abstract class Router
 {
     const BASE_CONTROLLER = '\OpinnoSwapi\controller\\';
     const ALLOWED_ROUTES = [
-        "", "/", "film"
+        "", "/", "film", "error"
     ];
     const SUFFIX_CONTROLLER = 'Controller';
     const SUFFIX_ACTION = "Action";
@@ -14,10 +14,10 @@ abstract class Router
     public static function route()
     {
         $parsedRequestQuery = self::parseParameters();
-        if (self::allowedRoute($parsedRequestQuery[0])) {
-            self::loadControllerAction($parsedRequestQuery);
+        if (!self::allowedRoute($parsedRequestQuery[0])) {
+            $parsedRequestQuery[0] = "error";
         }
-
+        self::loadControllerAction($parsedRequestQuery);
     }
 
     /**
