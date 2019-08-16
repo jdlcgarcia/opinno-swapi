@@ -2,9 +2,9 @@
 
 namespace OpinnoSwapi\service;
 
-class ApiHelper
+abstract class ApiHelper
 {
-    protected function connect($url)
+    static function connect($url)
     {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
