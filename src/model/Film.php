@@ -34,7 +34,7 @@ class Film
     private $releaseDate;
 
     /** @var Specie[] */
-    private $speciesList;
+    private $specieList;
 
     /** @var Starship[] */
     private $starshipList;
@@ -69,7 +69,7 @@ class Film
     /**
      * @param Character[] $characterList
      */
-    public function setCharacterList(array $characterList): void
+    public function setCharacterList($characterList): void
     {
         $this->characterList = $characterList;
     }
@@ -165,7 +165,7 @@ class Film
     /**
      * @param Planet[] $planetList
      */
-    public function setPlanetList(array $planetList): void
+    public function setPlanetList($planetList): void
     {
         $this->planetList = $planetList;
     }
@@ -181,7 +181,7 @@ class Film
     /**
      * @param string[] $producerList
      */
-    public function setProducerList(array $producerList): void
+    public function setProducerList($producerList): void
     {
         $this->producerList = $producerList;
     }
@@ -205,17 +205,17 @@ class Film
     /**
      * @return Specie[]
      */
-    public function getSpeciesList(): array
+    public function getSpecieList(): array
     {
-        return $this->speciesList;
+        return $this->specieList;
     }
 
     /**
-     * @param Specie[] $speciesList
+     * @param Specie[] $specieList
      */
-    public function setSpeciesList(array $speciesList): void
+    public function setSpecieList($specieList): void
     {
-        $this->speciesList = $speciesList;
+        $this->specieList = $specieList;
     }
 
     /**
@@ -229,7 +229,7 @@ class Film
     /**
      * @param Starship[] $starshipList
      */
-    public function setStarshipList(array $starshipList): void
+    public function setStarshipList($starshipList): void
     {
         $this->starshipList = $starshipList;
     }
@@ -280,6 +280,34 @@ class Film
     public function setVehicleList(array $vehicleList): void
     {
         $this->vehicleList = $vehicleList;
+    }
+
+    /**
+     * @param Character $character
+     */
+    public function addCharacter(Character $character)
+    {
+        $this->characterList[] = $character;
+    }
+
+    public function addPlanet(Planet $planet)
+    {
+        $this->planetList[] = $planet;
+    }
+
+    public function addStarship(Starship $starship)
+    {
+        $this->starshipList[] = $starship;
+    }
+
+    public function addVehicle(Vehicle $vehicle)
+    {
+        $this->vehicleList[] = $vehicle;
+    }
+
+    public function addSpecie(Specie $specie)
+    {
+        $this->specieList[] = $specie;
     }
 
 
