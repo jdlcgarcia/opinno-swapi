@@ -4,27 +4,38 @@
 namespace OpinnoSwapi\service;
 
 
+use Exception;
 use OpinnoSwapi\model\Film;
 use OpinnoSwapi\parser\FilmParser;
 
-class FilmService extends Swapi
+class FilmService
 {
-    const FILMS_URL = 'https://swapi.co/api/films/';
+    const URL = 'https://swapi.co/api/films/';
 
     /**
+     * @param string $search
      * @return Film[]
+     * @throws Exception
      */
-    public function getFilmList()
+    public function getFilmList($search)
     {
-        return self::connect(self::FILMS_URL);
+        $filmList = [];
+        $filmCollection = json_decode(ApiHelper::connect(self::URL."?search=".$search));
+        foreach($filmCollection->results as $filmObj) {
+            $film = new Film($filmObj->url);
+            $filmList[] = FilmParser::parse($film, $filmObj);
+        }
+        return $filmList;
     }
 
     /**
      * @param $filmId
      * @return Film
+     * @throws Exception
      */
     public function getFilm($filmId)
     {
-        return FilmParser::parse(self::connect(self::FILMS_URL.$filmId));
+        $film = new Film(self::URL.$filmId);
+        return FilmParser::parse($film);
     }
 }
