@@ -45,6 +45,7 @@ footer, header, nav, section, audio, video {
 table {
   border-collapse: separate;
   border-spacing: 0;
+
   caption, th, td {
     text-align: left;
     vertical-align: middle;
@@ -64,6 +65,82 @@ a img {
 @darker: #222831;
 @lighter: #EEE;
 
-h1 {
+a:link, a:visited {
+  color: @secondary;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.main-nav {
+  display: flex;
+  background: @secondary;
   color: @primary;
+  padding: 1em;
+  font-family: sans-serif;
+  @media screen {
+    @media (max-width: 575px) {
+      flex-direction: column;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex: 3;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @media screen {
+      @media (max-width: 575px) {
+        flex-direction: row;
+        margin-bottom: 1em;
+      }
+    }
+
+    li {
+      margin-right: 1em;
+
+      a {
+        color: @primary;
+      }
+    }
+  }
+
+  div.form {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    a {
+      background: @primary;
+      color: @lighter;
+      margin-left: 10px;
+      padding: 2px 5px;
+    }
+  }
+
+  input {
+    flex: 1;
+  }
+
+  button {
+    background: @lighter;
+    border: 0;
+    color: @darker;
+    padding: 0 1em;
+    margin-left: .3em;
+  }
+}
+
+#content {
+  padding: 1em;
+  background: @lighter;
+
+}
+
+#footer {
+  padding: 1em;
+  background: @darker;
 }

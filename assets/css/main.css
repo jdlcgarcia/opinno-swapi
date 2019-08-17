@@ -124,7 +124,72 @@ a img {
 :focus {
   outline: 0;
 }
-h1 {
+a:link,
+a:visited {
+  color: #393e46;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.main-nav {
+  display: flex;
+  background: #393e46;
   color: #00adb5;
+  padding: 1em;
+  font-family: sans-serif;
+}
+@media screen and (max-width: 575px) {
+  .main-nav {
+    flex-direction: column;
+  }
+}
+.main-nav ul {
+  display: flex;
+  flex: 3;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (max-width: 575px) {
+  .main-nav ul {
+    flex-direction: row;
+    margin-bottom: 1em;
+  }
+}
+.main-nav ul li {
+  margin-right: 1em;
+}
+.main-nav ul li a {
+  color: #00adb5;
+}
+.main-nav div.form {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.main-nav div.form a {
+  background: #00adb5;
+  color: #EEE;
+  margin-left: 10px;
+  padding: 2px 5px;
+}
+.main-nav input {
+  flex: 1;
+}
+.main-nav button {
+  background: #EEE;
+  border: 0;
+  color: #222831;
+  padding: 0 1em;
+  margin-left: 0.3em;
+}
+#content {
+  padding: 1em;
+  background: #EEE;
+}
+#footer {
+  padding: 1em;
+  background: #222831;
 }
 /*# sourceMappingURL=main.css.map */
