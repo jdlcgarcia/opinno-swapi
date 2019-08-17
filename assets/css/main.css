@@ -214,12 +214,6 @@ a:hover {
   font-size: 3em;
   font-family: 'Pathway Gothic One', sans-serif;
 }
-#content #filmList article span.crawl {
-  background: #000;
-  color: #FFE81F;
-  font-family: 'Pathway Gothic One', sans-serif;
-  padding: 10px 20px;
-}
 #content #filmList article a {
   width: 50%;
   margin: 5px auto;
@@ -227,6 +221,26 @@ a:hover {
   text-align: center;
   color: #00adb5;
   background: #222831;
+}
+#filmDetail {
+  display: flex;
+  align-items: flex-start;
+  padding: 1em;
+}
+#filmDetail .info {
+  flex: 1;
+  margin-left: 1em;
+}
+#filmDetail .info span {
+  font-weight: bold;
+}
+span.crawl {
+  background: #000;
+  color: #FFE81F;
+  font-family: 'Pathway Gothic One', sans-serif;
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
 }
 #footer {
   padding: 1em;
