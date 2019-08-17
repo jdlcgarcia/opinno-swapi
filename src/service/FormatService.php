@@ -4,6 +4,8 @@
 namespace OpinnoSwapi\service;
 
 
+use DateTime;
+
 class FormatService
 {
     public static function romanNumerals($arabicNumeral)
@@ -26,5 +28,14 @@ class FormatService
     {
         preg_match("/(?:[^\s,\.;\?\!]+(?:[\s,\.;\?\!]+|$)){0,$n}/", $string, $matches);
         return $matches[0];
+    }
+
+    /**
+     * @param DateTime $date
+     * @return string
+     */
+    public static function getNormalizedDate(DateTime $date)
+    {
+        return $date->format('d-m-Y');
     }
 }
