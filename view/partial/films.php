@@ -8,6 +8,7 @@ use OpinnoSwapi\model\Film;
 <ul>
 <?php
 foreach($filmList as $film) {?>
-    <li><?php echo $film->getTitle(); ?></li>
+    <li>
+        <a href="<?php echo $_ENV['HOME_URL']."film/".$film->getEpisodeId()?>"><?php echo $film->getTitle(); ?></a></li>
 <?php } ?>
 </ul>
