@@ -14,6 +14,7 @@ if (!isset($title)) {
     <meta charset="UTF-8"/>
     <title><?php echo $title ?></title>
     <link rel="stylesheet" href="<?php echo $_ENV['HOME_URL']; ?>/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
 </head>
 <body>
 <nav class="main-nav">
@@ -23,7 +24,7 @@ if (!isset($title)) {
         </li>
     </ul>
     <div class="form">
-        <input type="search" placeholder="Search" name="search" id="searchInput" onkeydown="buildSearchLink()">
+        <input type="search" placeholder="Search" name="search" id="searchInput" onkeydown="buildSearchLink()"/>
         <a id="searchLink" href="<?php echo $_ENV['HOME_URL'] ?>search/" onclick="buildSearchLink()">
             Search
         </a>
