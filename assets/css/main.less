@@ -37,6 +37,10 @@ ol, ul, li, fieldset, legend, label {
   padding: 0;
 }
 
+ul, ol {
+  list-style-type: none;
+}
+
 article, aside, canvas, figure, figure img, figcaption, hgroup,
 footer, header, nav, section, audio, video {
   display: block;
@@ -137,10 +141,19 @@ a:hover {
 #content {
   padding: 1em;
   background: @lighter;
-
 }
 
 #footer {
   padding: 1em;
   background: @darker;
+}
+
+h1 {
+  color: @primary;
+  font-size: 2em;
+}
+
+h2 {
+  color: @secondary;
+  font-size: 1.3em;
 }

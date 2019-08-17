@@ -93,6 +93,10 @@ label {
   margin: 0;
   padding: 0;
 }
+ul,
+ol {
+  list-style-type: none;
+}
 article,
 aside,
 canvas,
@@ -191,5 +195,13 @@ a:hover {
 #footer {
   padding: 1em;
   background: #222831;
+}
+h1 {
+  color: #00adb5;
+  font-size: 2em;
+}
+h2 {
+  color: #393e46;
+  font-size: 1.3em;
 }
 /*# sourceMappingURL=main.css.map */
