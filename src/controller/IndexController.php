@@ -10,10 +10,15 @@ class IndexController
     /**
      * @throws Exception
      */
-    public function indexAction()
+    public function indexAction($queryParameters)
     {
+        $searchQuery = "";
+        if (sizeof($queryParameters) > 0 && isset($queryParameters[1])) {
+            $searchQuery = $queryParameters[1];
+        }
+
         $service = new FilmService();
-        $filmList = $service->getFilmList("of");
+        $filmList = $service->getFilmList($searchQuery);
         $view = "films";
         require_once("view/template.php");
     }

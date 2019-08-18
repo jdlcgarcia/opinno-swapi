@@ -23,8 +23,10 @@ class FilmService
         $filmCollection = json_decode(ApiHelper::connect(self::URL."?search=".$search));
         foreach($filmCollection->results as $filmObj) {
             $film = new Film($filmObj->url);
-            $filmList[] = FilmParser::parse($film, $filmObj);
+            $film = FilmParser::parse($film, $filmObj);
+            $filmList[$film->getId()] = $film;
         }
+        ksort($filmList);
         return $filmList;
     }
 
