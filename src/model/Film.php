@@ -71,7 +71,7 @@ class Film
     /**
      * @param int $id
      */
-    public function setId(int $id): void
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -87,7 +87,7 @@ class Film
     /**
      * @param Character[] $characterList
      */
-    public function setCharacterList($characterList): void
+    public function setCharacterList($characterList)
     {
         $this->characterList = $characterList;
     }
@@ -103,7 +103,7 @@ class Film
     /**
      * @param DateTime $created
      */
-    public function setCreated(DateTime $created): void
+    public function setCreated(DateTime $created)
     {
         $this->created = $created;
     }
@@ -119,7 +119,7 @@ class Film
     /**
      * @param string $director
      */
-    public function setDirector(string $director): void
+    public function setDirector(string $director)
     {
         $this->director = $director;
     }
@@ -135,7 +135,7 @@ class Film
     /**
      * @param DateTime $edited
      */
-    public function setEdited(DateTime $edited): void
+    public function setEdited(DateTime $edited)
     {
         $this->edited = $edited;
     }
@@ -151,7 +151,7 @@ class Film
     /**
      * @param int $episodeId
      */
-    public function setEpisodeId(int $episodeId): void
+    public function setEpisodeId(int $episodeId)
     {
         $this->episodeId = $episodeId;
     }
@@ -167,7 +167,7 @@ class Film
     /**
      * @param string $openingCrawl
      */
-    public function setOpeningCrawl(string $openingCrawl): void
+    public function setOpeningCrawl(string $openingCrawl)
     {
         $this->openingCrawl = $openingCrawl;
     }
@@ -183,7 +183,7 @@ class Film
     /**
      * @param Planet[] $planetList
      */
-    public function setPlanetList($planetList): void
+    public function setPlanetList($planetList)
     {
         $this->planetList = $planetList;
     }
@@ -199,7 +199,7 @@ class Film
     /**
      * @param string[] $producerList
      */
-    public function setProducerList($producerList): void
+    public function setProducerList($producerList)
     {
         $this->producerList = $producerList;
     }
@@ -215,7 +215,7 @@ class Film
     /**
      * @param DateTime $releaseDate
      */
-    public function setReleaseDate(DateTime $releaseDate): void
+    public function setReleaseDate(DateTime $releaseDate)
     {
         $this->releaseDate = $releaseDate;
     }
@@ -231,7 +231,7 @@ class Film
     /**
      * @param Specie[] $specieList
      */
-    public function setSpecieList($specieList): void
+    public function setSpecieList($specieList)
     {
         $this->specieList = $specieList;
     }
@@ -247,7 +247,7 @@ class Film
     /**
      * @param Starship[] $starshipList
      */
-    public function setStarshipList($starshipList): void
+    public function setStarshipList($starshipList)
     {
         $this->starshipList = $starshipList;
     }
@@ -263,7 +263,7 @@ class Film
     /**
      * @param string $title
      */
-    public function setTitle(string $title): void
+    public function setTitle(string $title)
     {
         $this->title = $title;
     }
@@ -279,7 +279,7 @@ class Film
     /**
      * @param string $url
      */
-    public function setUrl(string $url): void
+    public function setUrl(string $url)
     {
         $this->url = $url;
     }
@@ -295,7 +295,7 @@ class Film
     /**
      * @param Vehicle[] $vehicleList
      */
-    public function setVehicleList(array $vehicleList): void
+    public function setVehicleList(array $vehicleList)
     {
         $this->vehicleList = $vehicleList;
     }

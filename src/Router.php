@@ -45,7 +45,7 @@ abstract class Router
     /**
      * @param array $parsedRequestQuery
      */
-    private static function loadControllerAction($parsedRequestQuery): void
+    private static function loadControllerAction($parsedRequestQuery)
     {
         $request = $parsedRequestQuery[0];
         unset($parsedRequestQuery[0]);
