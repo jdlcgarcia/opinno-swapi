@@ -17,6 +17,7 @@ if (!isset($title)) {
     <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="IveReadItAll">Star Wars API</div>
 <nav class="main-nav">
     <ul>
         <li>
