@@ -12,3 +12,7 @@ Opinno technical test
 
 # Version 1.1.0 - Carousel
 * Added carousel of characters in the search view.
+
+# Version 1.2.0 - History search
+* Added history for the search view
+* Added a distributable .env file
