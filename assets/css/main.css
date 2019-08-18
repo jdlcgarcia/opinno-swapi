@@ -93,6 +93,10 @@ label {
   margin: 0;
   padding: 0;
 }
+ul,
+ol {
+  list-style-type: none;
+}
 article,
 aside,
 canvas,
@@ -124,7 +128,166 @@ a img {
 :focus {
   outline: 0;
 }
+a:link,
+a:visited {
+  color: #393e46;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.main-nav {
+  display: flex;
+  background: #393e46;
+  color: #00adb5;
+  padding: 1em;
+  font-family: sans-serif;
+}
+@media screen and (max-width: 575px) {
+  .main-nav {
+    flex-direction: column;
+  }
+}
+.main-nav ul {
+  display: flex;
+  flex: 3;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (max-width: 575px) {
+  .main-nav ul {
+    flex-direction: row;
+    margin-bottom: 1em;
+  }
+}
+.main-nav ul li {
+  margin-right: 1em;
+}
+.main-nav ul li a {
+  color: #00adb5;
+}
+.main-nav div.form {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.main-nav div.form a {
+  background: #00adb5;
+  color: #EEE;
+  margin-left: 10px;
+  padding: 2px 5px;
+}
+.main-nav input {
+  flex: 1;
+}
+.main-nav button {
+  background: #EEE;
+  border: 0;
+  color: #222831;
+  padding: 0 1em;
+  margin-left: 0.3em;
+}
+#content {
+  padding: 1em;
+  background: #EEE;
+}
+#content #filmList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+#content #filmList article {
+  flex: 0 0 200px;
+  margin: 10px;
+  border: 1px solid #EEE;
+  box-shadow: 2px 2px 6px 0px #222831;
+  background: #393e46;
+}
+#content #filmList article span {
+  display: block;
+}
+#content #filmList article span.episode {
+  background: #000;
+  color: #FFE81F;
+  text-align: center;
+  font-size: 3em;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+#content #filmList article a {
+  width: 50%;
+  margin: 5px auto;
+  display: block;
+  text-align: center;
+  color: #00adb5;
+  background: #222831;
+}
+#content #characterList {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+#content #characterList article {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  background-color: #393e46;
+  border: 1px solid #222831;
+  padding: 5px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  resize: vertical;
+}
+#content #characterList article h4 {
+  text-align: center;
+}
+#content #filmDetail {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 10px;
+}
+#content #filmDetail span,
+#content #filmDetail div {
+  width: 30%;
+  margin-right: 10px;
+}
+@media screen and (max-width: 575px) {
+  #content #filmDetail {
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+  }
+  #content #filmDetail span.crawl {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  #content #filmDetail div {
+    width: 45%;
+    margin-right: 10px;
+  }
+}
+span.crawl {
+  background: #000;
+  color: #FFE81F;
+  font-family: 'Pathway Gothic One', sans-serif;
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+}
+#footer {
+  padding: 1em;
+  background: #222831;
+}
 h1 {
-  color: red;
+  color: #00adb5;
+  font-size: 2em;
+}
+h2 {
+  color: #393e46;
+  font-size: 1.3em;
 }
 /*# sourceMappingURL=main.css.map */

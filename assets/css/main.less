@@ -37,6 +37,10 @@ ol, ul, li, fieldset, legend, label {
   padding: 0;
 }
 
+ul, ol {
+  list-style-type: none;
+}
+
 article, aside, canvas, figure, figure img, figcaption, hgroup,
 footer, header, nav, section, audio, video {
   display: block;
@@ -45,6 +49,7 @@ footer, header, nav, section, audio, video {
 table {
   border-collapse: separate;
   border-spacing: 0;
+
   caption, th, td {
     text-align: left;
     vertical-align: middle;
@@ -59,6 +64,199 @@ a img {
   outline: 0;
 }
 
+@primary: #00adb5;
+@secondary: #393e46;
+@darker: #222831;
+@lighter: #EEE;
+@swcolorfont: #FFE81F;
+
+a:link, a:visited {
+  color: @secondary;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.main-nav {
+  display: flex;
+  background: @secondary;
+  color: @primary;
+  padding: 1em;
+  font-family: sans-serif;
+  @media screen {
+    @media (max-width: 575px) {
+      flex-direction: column;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex: 3;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @media screen {
+      @media (max-width: 575px) {
+        flex-direction: row;
+        margin-bottom: 1em;
+      }
+    }
+
+    li {
+      margin-right: 1em;
+
+      a {
+        color: @primary;
+      }
+    }
+  }
+
+  div.form {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    a {
+      background: @primary;
+      color: @lighter;
+      margin-left: 10px;
+      padding: 2px 5px;
+    }
+  }
+
+  input {
+    flex: 1;
+  }
+
+  button {
+    background: @lighter;
+    border: 0;
+    color: @darker;
+    padding: 0 1em;
+    margin-left: .3em;
+  }
+}
+
+#content {
+  padding: 1em;
+  background: @lighter;
+
+  #filmList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    article {
+      flex: 0 0 200px;
+      margin: 10px;
+      border: 1px solid @lighter;
+      box-shadow: 2px 2px 6px 0px @darker;
+      background: @secondary;
+
+      span {
+        display: block;
+      }
+
+      span.episode {
+        background: #000;
+        color: @swcolorfont;
+        text-align: center;
+        font-size: 3em;
+        font-family: 'Pathway Gothic One', sans-serif;
+      }
+
+      a {
+        width: 50%;
+        margin: 5px auto;
+        display: block;
+        text-align: center;
+        color: @primary;
+        background: @darker;
+      }
+    }
+  }
+
+
+  #characterList {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    article {
+      flex: 0 0 auto;
+      width: 100px;
+      height: 100px;
+      background-color: @secondary;
+      border: 1px solid @darker;
+      padding: 5px;
+      margin-right: 10px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      resize: vertical;
+
+      h4 {
+        text-align: center;
+      }
+    }
+  }
+
+  #filmDetail {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin: 10px;
+
+    span, div {
+      width: 30%;
+      margin-right: 10px;
+    }
+
+    @media screen {
+      @media (max-width: 575px) {
+        //flex-direction: column;
+        flex-wrap: wrap;
+        margin-bottom: 1em;
+
+        span.crawl {
+          width: 100%;
+          margin: 0 0 10px;
+        }
+
+        div {
+          width: 45%;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+span.crawl {
+  background: #000;
+  color: @swcolorfont;
+  font-family: 'Pathway Gothic One', sans-serif;
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+}
+
+#footer {
+  padding: 1em;
+  background: @darker;
+}
+
 h1 {
-  color: red;
+  color: @primary;
+  font-size: 2em;
+}
+
+h2 {
+  color: @secondary;
+  font-size: 1.3em;
 }

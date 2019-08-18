@@ -3,22 +3,34 @@
 namespace OpinnoSwapi\controller;
 
 use Exception;
+use OpinnoSwapi\service\CharacterService;
 use OpinnoSwapi\service\FilmService;
 
 class IndexController
 {
     /**
+     * @param $queryParameters
      * @throws Exception
      */
-    public function indexAction()
+    public function indexAction($queryParameters)
     {
+        $searchQuery = "";
+        if (sizeof($queryParameters) > 0 && isset($queryParameters[1])) {
+            $searchQuery = $queryParameters[1];
+        }
+
         $service = new FilmService();
-        $filmList = $service->getFilmList("of");
+        $filmList = $service->getFilmList($searchQuery);
+
+        $characterService = new CharacterService();
+        $characterList = $characterService->getCharacterList();
+
         $view = "films";
         require_once("view/template.php");
     }
 
     /**
+     * @param $queryParameters
      * @throws Exception
      */
     public function filmAction($queryParameters)
@@ -34,9 +46,17 @@ class IndexController
             exit();
         }
 
+        $characterService = new CharacterService();
+        $characterList = $characterService->getCharacterList();
 
-        $service = new FilmService();
-        $film = $service->getFilm($queryParameters[1]);
+        $filmService = new FilmService();
+        $film = $filmService->getFilm($queryParameters[1]);
+        $charactersInTheFilm = [];
+        foreach($film->getCharacterList() as $character) {
+            $characterId = $characterService->getIdFromUrl($character->getUrl());
+            $charactersInTheFilm[$characterId] = $characterList[$characterId];
+        }
+        $film->setCharacterList($charactersInTheFilm);
         $view = "detail";
         require_once("view/template.php");
     }
