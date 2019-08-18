@@ -2,6 +2,7 @@
 
 use OpinnoSwapi\model\Character;
 use OpinnoSwapi\model\Film;
+use OpinnoSwapi\service\SearchHistoryService;
 use OpinnoSwapi\service\FormatService;
 
 /**
@@ -13,7 +14,17 @@ $h2 = "All Star Wars films";
 if ($searchQuery != "") {
     $h2 = "Films with '" . $searchQuery . "' in the title:";
 }
-?>
+$searchHistory = SearchHistoryService::getSearchHistory();
+if (sizeof($searchHistory) > 0) { ?>
+    <section>
+        <h5>Search history</h5>
+        <ul>
+            <?php foreach ($searchHistory as $searchTerm) { ?>
+                <li><?php echo $searchTerm ?></li>
+            <?php } ?>
+        </ul>
+    </section>
+<?php } ?>
 <h2><?php echo $h2 ?></h2>
 <div id="filmList">
     <?php
