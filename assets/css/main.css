@@ -222,6 +222,54 @@ a:hover {
   color: #00adb5;
   background: #222831;
 }
+#content #characterList {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+#content #characterList article {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  background-color: #393e46;
+  border: 1px solid #222831;
+  padding: 5px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  resize: vertical;
+}
+#content #characterList article h4 {
+  text-align: center;
+}
+#content #filmDetail {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 10px;
+}
+#content #filmDetail span,
+#content #filmDetail div {
+  width: 30%;
+  margin-right: 10px;
+}
+@media screen and (max-width: 575px) {
+  #content #filmDetail {
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+  }
+  #content #filmDetail span.crawl {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  #content #filmDetail div {
+    width: 45%;
+    margin-right: 10px;
+  }
+}
 span.crawl {
   background: #000;
   color: #FFE81F;
@@ -229,31 +277,6 @@ span.crawl {
   padding: 10px 20px;
   display: block;
   text-align: center;
-}
-#filmDetail {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  margin: 10px;
-}
-#filmDetail span,
-#filmDetail div {
-  width: 30%;
-  margin-right: 10px;
-}
-@media screen and (max-width: 575px) {
-  #filmDetail {
-    flex-wrap: wrap;
-    margin-bottom: 1em;
-  }
-  #filmDetail span.crawl {
-    width: 100%;
-    margin: 0 0 10px;
-  }
-  #filmDetail div {
-    width: 45%;
-    margin-right: 10px;
-  }
 }
 #footer {
   padding: 1em;
