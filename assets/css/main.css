@@ -292,6 +292,7 @@ h2 {
 }
 #searchHistory ul {
   display: flex;
+  flex-wrap: wrap;
 }
 #searchHistory ul li {
   background: #393e46;
