@@ -18,9 +18,10 @@ class SearchHistoryService
             $cookie = array();
         }
         if ($search != "") {
-            $cookie[] = $cookie;
+            $cookie[] = $search;
             $cookie = serialize($cookie);
             setcookie(self::SEARCH_HISTORY, $cookie, time() + self::TTL_COOKIE);
+            $_COOKIE[self::SEARCH_HISTORY] = $cookie;
         }
     }
 
