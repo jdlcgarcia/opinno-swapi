@@ -21,6 +21,10 @@ class IndexController
 
         $service = new FilmService();
         $filmList = $service->getFilmList($searchQuery);
+
+        $characterService = new CharacterService();
+        $characterList = $characterService->getCharacterList();
+
         $view = "films";
         require_once("view/template.php");
     }
