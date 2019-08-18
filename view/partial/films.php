@@ -16,10 +16,10 @@ if ($searchQuery != "") {
 }
 $searchHistory = SearchHistoryService::getSearchHistory();
 if (sizeof($searchHistory) > 0) { ?>
-    <section>
+    <section id="searchHistory">
         <h5>Search history</h5>
         <ul>
-            <?php foreach ($searchHistory as $searchTerm) { ?>
+            <?php foreach (array_reverse($searchHistory) as $searchTerm) { ?>
                 <li><?php echo $searchTerm ?></li>
             <?php } ?>
         </ul>
