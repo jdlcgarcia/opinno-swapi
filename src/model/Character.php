@@ -321,5 +321,37 @@ class Character
         $this->edited = $edited;
     }
 
+    /**
+     * @param Film $film
+     */
+    public function addFilm(Film $film)
+    {
+        $this->films[] = $film;
+    }
+
+    /**
+     * @param Specie $specie
+     */
+    public function addSpecie(Specie $specie)
+    {
+        $this->species[] = $specie;
+    }
+
+    /**
+     * @param Starship $starship
+     */
+    public function addStarship(Starship $starship)
+    {
+        $this->starships[] = $starship;
+    }
+
+    /**
+     * @param Vehicle $vehicle
+     */
+    public function addVehicle(Vehicle $vehicle)
+    {
+        $this->vehicles[] = $vehicle;
+    }
+
 
 }
