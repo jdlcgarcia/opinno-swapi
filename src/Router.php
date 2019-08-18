@@ -6,7 +6,9 @@ abstract class Router
 {
     const BASE_CONTROLLER = '\OpinnoSwapi\controller\\';
     const ALLOWED_ROUTES = [
-        "", "/", "film", "error"
+        "", "/",
+        "search", "film",
+        "error"
     ];
     const SUFFIX_CONTROLLER = 'Controller';
     const SUFFIX_ACTION = "Action";
@@ -48,7 +50,7 @@ abstract class Router
         $request = $parsedRequestQuery[0];
         unset($parsedRequestQuery[0]);
         switch ($request) {
-            case '/' : case '' :
+            case '/' : case '' : case 'search':
                 $controller = "index";
                 $action = "index";
                 break;

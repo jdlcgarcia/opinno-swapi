@@ -26,6 +26,7 @@ class FilmParser
         if (is_null($filmObj)) {
             $filmObj = json_decode(ApiHelper::connect($film->getUrl()));
         }
+        $film->setId((int)substr($film->getUrl(), -2));
         $film->setTitle($filmObj->title);
         $film->setEpisodeId((int)$filmObj->episode_id);
         $film->setOpeningCrawl($filmObj->opening_crawl);

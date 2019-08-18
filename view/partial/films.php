@@ -24,7 +24,7 @@ if ($searchQuery != "") {
                 <span>Director: <?php echo $film->getDirector(); ?></span>
                 <span class="crawl"><?php echo nl2br(FormatService::firstWords($film->getOpeningCrawl(), 50)); ?>&hellip;</span>
             </div>
-            <a href="<?php echo $_ENV['HOME_URL'] . "film/" . $film->getEpisodeId() ?>">Details</a>
+            <a href="<?php echo $_ENV['HOME_URL'] . "film/" . $film->getId() ?>">Details</a>
         </article>
     <?php } ?>
 </div>

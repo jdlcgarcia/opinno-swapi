@@ -6,6 +6,9 @@ use DateTime;
 
 class Film
 {
+    /** @var int */
+    private $id;
+
     /** @var Character[] */
     private $characterList;
 
@@ -57,6 +60,21 @@ class Film
         $this->url = $url;
     }
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return Character[]
