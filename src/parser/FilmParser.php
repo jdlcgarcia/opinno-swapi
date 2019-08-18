@@ -13,7 +13,7 @@ use OpinnoSwapi\model\Vehicle;
 use OpinnoSwapi\service\ApiHelper;
 use stdClass;
 
-class FilmParser
+class FilmParser extends Parser
 {
     /**
      * @param Film $film
@@ -26,7 +26,8 @@ class FilmParser
         if (is_null($filmObj)) {
             $filmObj = json_decode(ApiHelper::connect($film->getUrl()));
         }
-        $film->setId((int)substr($film->getUrl(), -2));
+        $id = self::parseIdFromUrl($film->getUrl());
+        $film->setId($id);
         $film->setTitle($filmObj->title);
         $film->setEpisodeId((int)$filmObj->episode_id);
         $film->setOpeningCrawl($filmObj->opening_crawl);

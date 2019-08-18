@@ -8,6 +8,9 @@ use DateTime;
 
 class Character
 {
+    /** @var int */
+    private $id;
+
     /** @var string */
     private $url;
 
@@ -63,6 +66,22 @@ class Character
     public function __construct(string $url)
     {
         $this->url = $url;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
     /**

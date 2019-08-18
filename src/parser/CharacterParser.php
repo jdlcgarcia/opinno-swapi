@@ -13,7 +13,7 @@ use OpinnoSwapi\model\Vehicle;
 use OpinnoSwapi\service\ApiHelper;
 use stdClass;
 
-class CharacterParser
+class CharacterParser extends Parser
 {
     /**
      * @param Character $character
@@ -26,6 +26,8 @@ class CharacterParser
         if (is_null($characterObj)) {
             $characterObj = json_decode(ApiHelper::connect($character->getUrl()));
         }
+        $id = self::parseIdFromUrl($character->getUrl());
+        $character->setId($id);
         $character->setName($characterObj->name);
         $character->setBirthYear($characterObj->birth_year);
         $character->setEyeColor($characterObj->eye_color);
