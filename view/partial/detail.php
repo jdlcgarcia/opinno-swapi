@@ -14,18 +14,27 @@ use OpinnoSwapi\service\FormatService;
         <?php echo strtoupper($film->getTitle()); ?><br/><br/>
         <?php echo nl2br($film->getOpeningCrawl()); ?>
     </span>
+
+    <div class="characters">
+        <h3>Characters</h3>
+        <ul>
+            <?php foreach($film->getCharacterList() as $character) { ?>
+                <li><?php echo $character->getName(); ?></li>
+            <?php } ?>
+        </ul>
+    </div>
+
     <div class="info">
-        <p><span>Director:</span> <?php echo $film->getDirector(); ?></p>
-        <p>
-            <span>Producers:</span>
-            <ul>
+        <h3>Director</h3>
+        <?php echo $film->getDirector(); ?>
+        <h3>Producers</h3>
+        <ul>
             <?php foreach($film->getProducerList() as $producer) {
                 echo "<li>".$producer."</li>";
             } ?>
-            </ul>
-        </p>
-        <p><span>Created on:</span> <?php echo FormatService::getNormalizedDate($film->getCreated()); ?></p>
-        <p><span>Edited on:</span> <?php echo FormatService::getNormalizedDate($film->getEdited()); ?></p>
-        <p><span>Released on:</span> <?php echo FormatService::getNormalizedDate($film->getReleaseDate()); ?></p>
+        </ul>
+        <h3>Released date</h3>
+        <?php echo FormatService::getNormalizedDate($film->getReleaseDate()); ?>
+
     </div>
 </div>
