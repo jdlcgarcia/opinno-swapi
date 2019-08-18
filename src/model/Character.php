@@ -79,7 +79,7 @@ class Character
     /**
      * @param int $id
      */
-    public function setId(int $id): void
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -95,7 +95,7 @@ class Character
     /**
      * @param string $url
      */
-    public function setUrl(string $url): void
+    public function setUrl(string $url)
     {
         $this->url = $url;
     }
@@ -111,7 +111,7 @@ class Character
     /**
      * @param string $name
      */
-    public function setName(string $name): void
+    public function setName(string $name)
     {
         $this->name = $name;
     }
@@ -127,7 +127,7 @@ class Character
     /**
      * @param string $birthYear
      */
-    public function setBirthYear(string $birthYear): void
+    public function setBirthYear(string $birthYear)
     {
         $this->birthYear = $birthYear;
     }
@@ -143,7 +143,7 @@ class Character
     /**
      * @param string $eyeColor
      */
-    public function setEyeColor(string $eyeColor): void
+    public function setEyeColor(string $eyeColor)
     {
         $this->eyeColor = $eyeColor;
     }
@@ -159,7 +159,7 @@ class Character
     /**
      * @param string $gender
      */
-    public function setGender(string $gender): void
+    public function setGender(string $gender)
     {
         $this->gender = $gender;
     }
@@ -175,7 +175,7 @@ class Character
     /**
      * @param string $hairColor
      */
-    public function setHairColor(string $hairColor): void
+    public function setHairColor(string $hairColor)
     {
         $this->hairColor = $hairColor;
     }
@@ -191,7 +191,7 @@ class Character
     /**
      * @param string $height
      */
-    public function setHeight(string $height): void
+    public function setHeight(string $height)
     {
         $this->height = $height;
     }
@@ -207,7 +207,7 @@ class Character
     /**
      * @param string $mass
      */
-    public function setMass(string $mass): void
+    public function setMass(string $mass)
     {
         $this->mass = $mass;
     }
@@ -223,7 +223,7 @@ class Character
     /**
      * @param string $skinColor
      */
-    public function setSkinColor(string $skinColor): void
+    public function setSkinColor(string $skinColor)
     {
         $this->skinColor = $skinColor;
     }
@@ -239,7 +239,7 @@ class Character
     /**
      * @param string $homeworld
      */
-    public function setHomeworld(string $homeworld): void
+    public function setHomeworld(string $homeworld)
     {
         $this->homeworld = $homeworld;
     }
@@ -255,7 +255,7 @@ class Character
     /**
      * @param Film[] $films
      */
-    public function setFilms(array $films): void
+    public function setFilms(array $films)
     {
         $this->films = $films;
     }
@@ -271,7 +271,7 @@ class Character
     /**
      * @param Specie[] $species
      */
-    public function setSpecies(array $species): void
+    public function setSpecies(array $species)
     {
         $this->species = $species;
     }
@@ -287,7 +287,7 @@ class Character
     /**
      * @param Starship[] $starships
      */
-    public function setStarships(array $starships): void
+    public function setStarships(array $starships)
     {
         $this->starships = $starships;
     }
@@ -303,7 +303,7 @@ class Character
     /**
      * @param Vehicle[] $vehicles
      */
-    public function setVehicles(array $vehicles): void
+    public function setVehicles(array $vehicles)
     {
         $this->vehicles = $vehicles;
     }
@@ -319,7 +319,7 @@ class Character
     /**
      * @param DateTime $created
      */
-    public function setCreated(DateTime $created): void
+    public function setCreated(DateTime $created)
     {
         $this->created = $created;
     }
@@ -335,7 +335,7 @@ class Character
     /**
      * @param DateTime $edited
      */
-    public function setEdited(DateTime $edited): void
+    public function setEdited(DateTime $edited)
     {
         $this->edited = $edited;
     }
