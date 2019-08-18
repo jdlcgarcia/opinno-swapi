@@ -4,6 +4,7 @@ namespace OpinnoSwapi\controller;
 
 use Exception;
 use OpinnoSwapi\service\CharacterService;
+use OpinnoSwapi\service\SearchHistoryService;
 use OpinnoSwapi\service\FilmService;
 
 class IndexController
@@ -19,6 +20,7 @@ class IndexController
             $searchQuery = $queryParameters[1];
         }
 
+        SearchHistoryService::saveSearch($searchQuery);
         $service = new FilmService();
         $filmList = $service->getFilmList($searchQuery);
 
