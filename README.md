@@ -9,3 +9,6 @@ Opinno technical test
 # Version 1.0.0 - Full
 * Styles for all the pages
 * List of characters added to the detail view of the film.
+
+# Version 1.1.0 - Carousel
+* Added carousel of characters in the search view.
