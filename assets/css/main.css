@@ -222,18 +222,6 @@ a:hover {
   color: #00adb5;
   background: #222831;
 }
-#filmDetail {
-  display: flex;
-  align-items: flex-start;
-  margin: 10px;
-}
-#filmDetail .info {
-  flex: 1;
-  margin-left: 1em;
-}
-#filmDetail .info span {
-  font-weight: bold;
-}
 span.crawl {
   background: #000;
   color: #FFE81F;
@@ -241,6 +229,31 @@ span.crawl {
   padding: 10px 20px;
   display: block;
   text-align: center;
+}
+#filmDetail {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 10px;
+}
+#filmDetail span,
+#filmDetail div {
+  width: 30%;
+  margin-right: 10px;
+}
+@media screen and (max-width: 575px) {
+  #filmDetail {
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+  }
+  #filmDetail span.crawl {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  #filmDetail div {
+    width: 45%;
+    margin-right: 10px;
+  }
 }
 #footer {
   padding: 1em;

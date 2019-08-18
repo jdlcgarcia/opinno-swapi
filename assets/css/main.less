@@ -179,20 +179,6 @@ a:hover {
   }
 }
 
-#filmDetail {
-  display: flex;
-  align-items: flex-start;
-  margin: 10px;
-
-  .info {
-    flex: 1;
-    margin-left: 1em;
-    span {
-      font-weight: bold;
-    }
-  }
-}
-
 span.crawl {
   background: #000;
   color: @swcolorfont;
@@ -200,6 +186,37 @@ span.crawl {
   padding: 10px 20px;
   display: block;
   text-align: center;
+}
+
+
+#filmDetail {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 10px;
+
+  span, div {
+    width: 30%;
+    margin-right: 10px;
+  }
+
+  @media screen {
+    @media (max-width: 575px) {
+      //flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 1em;
+
+      span.crawl {
+        width: 100%;
+        margin: 0 0 10px;
+      }
+
+      div {
+        width: 45%;
+        margin-right: 10px;
+      }
+    }
+  }
 }
 
 #footer {
