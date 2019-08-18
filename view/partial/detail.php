@@ -18,9 +18,11 @@ use OpinnoSwapi\service\FormatService;
         <p><span>Director:</span> <?php echo $film->getDirector(); ?></p>
         <p>
             <span>Producers:</span>
+            <ul>
             <?php foreach($film->getProducerList() as $producer) {
-                echo $producer."<br />";
+                echo "<li>".$producer."</li>";
             } ?>
+            </ul>
         </p>
         <p><span>Created on:</span> <?php echo FormatService::getNormalizedDate($film->getCreated()); ?></p>
         <p><span>Edited on:</span> <?php echo FormatService::getNormalizedDate($film->getEdited()); ?></p>
