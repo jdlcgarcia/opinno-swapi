@@ -290,4 +290,15 @@ h2 {
   color: #393e46;
   font-size: 1.3em;
 }
+#searchHistory ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#searchHistory ul li {
+  background: #393e46;
+  color: #00adb5;
+  border: 1px solid #EEE;
+  padding: 5px;
+  margin-right: 10px;
+}
 /*# sourceMappingURL=main.css.map */
